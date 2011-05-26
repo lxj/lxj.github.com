@@ -1,0 +1,68 @@
+.navigation{
+    position:relative; /*IE hidden need*/
+	overflow:hidden;/*Hiding*/
+	padding-bottom:100px;/*Icon Showcase*/
+	_zoom:1; /*For Ie6 hack*/
+}
+ul.menu{
+	border:1px solid #b0b0b0; 
+	border-width:0 1px 0;
+	position:relative; /*zIndex need*/
+	-moz-border-radius:4px;
+    -webkit-border-radius:4px;
+}
+ul.menu li{
+    float:left;
+	position:relative; 
+}
+ul.menu li a{
+    background:#fff url(bgMenu.png) repeat-x left 1px;
+    font:normal 700 14px/1.4em 'tahoma','simsun' ;
+    padding:11px 0px;
+    width:128px;
+    color:#333333;
+    float:left;
+    text-decoration:none;
+    text-shadow: 0 1px 1px #fff;
+    text-align:center;
+    border:1px solid #b0b0b0;
+    border-right:1px solid #a1a1a1;
+    border-left:1px solid #e8e8e8;
+    -moz-box-shadow:0 2px 3px #000;
+    -webkit-box-shadow:0 2px 3px #000;
+    *border-bottom:2px solid #7b7b7b; /*For IE Looklike 3D Navbar*/
+}
+ul.menu li a.hover{
+    background-position:0 -48px; 
+    color:#fff;
+    text-shadow: 0 -1px 1px #000;
+}
+ul.menu li a.first{
+    -moz-border-radius:4px 0px 0px 4px;
+    -webkit-border-radius:4px 0px 0px 4px;
+    border-left:0 none;
+}
+ul.menu li a.last{
+    -moz-border-radius:0px 4px 4px 0px;
+    -webkit-border-radius:0px 4px 4px 0px;
+    border-right:0 none;
+}
+ul.menu li span{
+    width:64px;
+    height:64px;
+    background-repeat:no-repeat;
+    background-color:transparent;
+    position:absolute;
+    z-index:-1;
+    top:-17px;
+	left:33px;
+}
+
+ul.menu li span.game{background-image:url(game.png);}
+ul.menu li span.water{background-image:url(water.png);}
+ul.menu li span.code{background-image:url(code.png);}
+ul.menu li span.tools{background-image:url(tools.png);}
+ul.menu li span.curve{background-image:url(curve.png);}
+ul.menu li span.appstore{background-image:url(appstore.png);}
+ul.menu li span.options{background-image:url(options.png);}
+
