@@ -3,7 +3,7 @@ plugins: ./_plugins
 server: true
 auto:        true
 lsi:         false
-server_port: 4088
+server_port: 4000
 pygments:    true
 markdown:    rdiscount
 permalink:   date
