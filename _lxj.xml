@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<project name="FOR XIA" default="initialize">
+    <property name="assets" value="assets"/>
+    <property name="js" value="assets/js"/>
+    <property name="css" value="assets/css"/>
+    <property name="img" value="assets/img"/>
+    <property name="charset" value="utf-8"/>
+    <property name="version" value="201202072"/>
+    <property name="version2" value="201202072"/><!-- 针对单个背景图片路径版本更新-->
+    <property name="yui-compressor" value="D:\TBCompressor\yuicompressor.jar"/>
+    <!-- 添加"Ant-Contrib"对ANT构建文件的支持 -->
+    <taskdef resource="net/sf/antcontrib/antlib.xml">
+        <classpath>
+            <pathelement location="${sys-env.ANT_HOME}/ant-contrib-1.0b3.jar"/>
+        </classpath>
+    </taskdef>
+
+    <target name="concat_css">
+        <delete>
+            <fileset dir="${css}" includes="**/lxj.css" ></fileset>
+            <fileset dir="${js}" includes="**/lxj.js" ></fileset>
+        </delete>
+        <echo>concat css js begin</echo>
+        <concat destfile="${css}/lxj.css" encoding="${charset}" outputencoding="${charset}" append="false" fixlastline="true">
+            <path path="assets/css/_lxj.source.css" />
+            <path path="assets/app/_syntaxhighlighter/styles/shCore.css" />
+            <path path="assets/app/_syntaxhighlighter/styles/shThemeDefault2.css" />
+        </concat>
+        <concat destfile="${js}/lxj.js" encoding="${charset}" outputencoding="${charset}" append="false" fixlastline="true">
+            <path path="assets/app/_syntaxhighlighter/scripts/shCore.js" />
+            <path path="assets/app/_syntaxhighlighter/scripts/shBrushJScript.js" />
+            <path path="assets/app/_syntaxhighlighter/scripts/shBrushCss.js" />
+            <path path="assets/app/_syntaxhighlighter/scripts/shBrushXml.js" />
+			<path path="assets/app/_syntaxhighlighter/scripts/shBrushPlain.js" />
+			<path path="assets/app/_syntaxhighlighter/scripts/shBrushPhp.js" />
+			<path path="assets/js/_SyntaxHighlighter.source.js" />
+        </concat>
+        <echo>concat css js end</echo>
+    </target>
+
+    <target name="compress">
+        <java jar="${yui-compressor}" fork="true">
+            <arg value="${file}" />
+            <arg line="--charset utf-8" />
+            <arg value="-o" />
+            <arg value="${file}" />
+        </java>
+        <echo>${file}</echo>
+    </target>
+
+    <target name="confusion" depends="concat_css">
+        <for param="file">
+            <path>
+                <fileset dir="${assets}">
+                    <include name="**/lxj.css"/>
+                    <include name="**/lxj.js"/>
+                </fileset>
+            </path>
+            <sequential>
+                <antcall target="compress">
+                    <param name="file" value="@{file}" />
+                </antcall>
+                <replace file = "@{file}">
+                    <replacefilter token = "v=version" value = "v=${version}"  />
+                </replace>
+            </sequential>
+        </for>
+    </target>
+
+    <target name="initialize">
+        <antcall target="confusion" />
+        <echo>Done!</echo>
+    </target>
+
+</project>

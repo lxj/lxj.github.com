@@ -1,0 +1,50 @@
+---
+layout: default
+name: pageall
+---
+    <h1 class="page-title">文章列表</h1>
+	<ul class="post-listing">
+	{% for post in paginator.posts %}
+	   <li class="post-item">
+		<article class="post">
+			<div class="entry">
+				<h2 class="post-title"><a href="{{ post.url }}" class="dark-link">{{ post.title }}</a></h2>
+				<span class="inpost-date"><time pubdate="{{ post.date | date_to_utc | date: '%Y-%m-%d' }}">{{ post.date | date_to_utc | date: "%Y-%m-%d" }}</time></span>
+			</div>
+			<div class="post-info">
+				<span class="cat-info pi">Cat:<a href="/categories/{{ post.category | slugize }}">{{ post.category }}</a></span>
+				<span class="tag-list pi">Tags:{% for tag in post.tags %}<a href="/tags/{{ tag  | slugize}}" class="tag-item">{{ tag }}</a>{% endfor %}</span>
+			</div>
+			<div class="post-content">
+				{% if post.summary %}	
+				{{ post.summary | strip_html | truncatewords: 150 }}
+				{% elsif post.description %}
+				{{ post.description | strip_html | truncatewords: 100 }}
+				{% else %}
+				{{ post.content | strip_html | truncatewords: 50 }}
+				{% endif %}
+				<a href="{{ post.url }}" title="Read More" rel="nofollow" class="v-more"><span>&#10149;</span>Read More</a>
+			</div>
+		</article>
+	   </li>
+	{% endfor %}
+	</ul>
+
+	<!-- Pagination links -->
+	<div class="pagination">
+	  {% if paginator.previous_page %}
+	    {% if paginator.previous_page == 1 %}
+		<a href="/page.html" class="previous">Previous</a>
+        {% else %}
+        <a href="/page{{paginator.previous_page}}" class="previous">Previous</a>
+		{% endif %}
+	  {% else %}
+		<span class="previous">Previous</span>
+	  {% endif %}
+	  <span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
+	  {% if paginator.next_page %}
+		<a href="/page{{paginator.next_page}}" class="next ">Next</a>
+	  {% else %}
+		<span class="next ">Next</span>
+	  {% endif %}
+	</div>

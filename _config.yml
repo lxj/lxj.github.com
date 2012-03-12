@@ -1,8 +1,20 @@
 destination: ./_site
+plugins: ./_plugins
 server: true
 auto:        true
 lsi:         false
-server_port: 4000
+server_port: 4088
 pygments:    true
-markdown:    redcloth
+markdown:    rdiscount
 permalink:   date
+paginate: 15
+paginate_files:
+  - page.html
+imgurl: http://assets.xmlhtml.cn/img
+url: http://www.lxj.com
+feed: /atom.xml
+name: SeanLou
+des: SeanLou
+author:
+  name: SeanLou
+

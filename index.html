@@ -1,6 +1,40 @@
 ---
 layout: default
+title:
+description: 一个博客，基于 Jekyll 搭建起来的博客。在这里，不仅仅是用来快速记录工作，学习，生活的一点一滴的地方，更是对 Jekyll 的学习和使用的一次有意义的实践。
+keywords: PIZn, GitHub, Jekyll, Plugins, Works, Archives, Quotes, Violet, css, html, javascript, wordpress, logo, design, geek
+isIndex: true
+name: index
 ---
-{% assign page = site.posts.first %}
-{% assign content = page.content %}
-{% include post.html %}
+<ul class="post-listing">
+	{% for rpost in site.posts limit:5 %}
+	<li class="post-item">
+		<article class="post">
+		<div class="entry">
+			<h2 class="post-title"><a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a></h2>
+			<span class="inpost-date"><time pubdate="{{ rpost.date | date_to_utc | date: '%Y-%m-%d' }}">{{ rpost.date | date_to_utc | date: "%Y-%m-%d" }}</time></span>
+		</div>
+		<div class="post-info">
+			<span class="cat-info pi">Cat: <a href="/categories/{{ rpost.category | slugize }}">{{ rpost.category }}</a></span>
+			<span class="tag-list pi">Tags:{% for tag in rpost.tags %}<a href="/tags/{{ tag  | slugize}}" class="tag-item">{{ tag }}</a>{% endfor %}</span>
+		</div>
+
+		<div class="post-content">
+			<p>{{ rpost.description }}<a href="{{ rpost.url }}" title="Read More" rel="nofollow" class="v-more"><span>&#10149;</span>Read More</a></p>
+		</div>
+		</article>
+	</li>
+	{% endfor %}
+	
+	{% for npost in site.posts limit:10 offset:5  %}
+	<li class="post-item">
+		<article class="post">
+			<div class="entrytop">
+				<div class="entry">
+				<h2 class="post-title"><span class="inpost-date"><time pubdate="{{ npost.date | date_to_utc | date: '%Y-%m-%d' }}">{{ npost.date | date_to_utc | date: "%Y-%m-%d" }}</time></span><a href="{{ npost.url }}" title="{{ npost.title }}" rel="bookmark">{{ npost.title }}</a></h2>
+				</div>
+			</div>
+		</article>
+	</li>
+	{% endfor %}
+</ul>	

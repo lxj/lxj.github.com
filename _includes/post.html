@@ -1,7 +1,29 @@
-<div class='post'>
-  <h1><a href='{{page.url}}'>{{page.title}}</a></h1>
-  <span class='date'>{{page.date | date: "%Y-%m-%d"}}</span>
-  <div class='body'>{{ content }}</div>
+<div class="post">
+  <h1 class="post-title2"><a href='{{page.url}}'>{{page.title}}</a></h1>
+  <div class="post-info2">
+	<span class="date pi">Time:{{page.date | date: "%Y-%m-%d"}}</span>
+	<span class="cat-info pi">Cat:{% if page.category %} in <a href="/categories/{{ page.category | slugize }}">{{ page.category }}</a>{% endif %}</span>
+	<span class="author pi">By <a href="/about.html" title="author">Lxj</a></span>
+	<span class="tag-list pi">Tags:{% for tag in page.tags %}<a href="/tags/{{ tag| slugize }}" class="tag-item">{{ tag }}</a>{% endfor %}</span>
+  </div>		
+  <div class="post-content">
+    {% if page.img %}
+      <img src="{{page.img}}" alt="" />
+    {% endif %}
+  
+    {{ content }}
+  </div>
+  
+  <nav class="v-pagination">
+  	{% if page.next %}
+	<a class="next" href="{{ page.next.url }}" rel="bookmark">Next:{{ page.next.title | truncatewords:5 }}</a>
+	{% endif %}
+    <br />
+	{% if page.previous %}
+	<a class="prev" href="{{ page.previous.url }}" rel="bookmark">Previous:{{ page.previous.title | truncatewords:5 }}</a>
+	{% endif %}
+ </nav>
+ 
 </div>
 <script type="text/javascript" charset="utf-8">
   var disqus_url = "http://lxj.name{{page.url}}";
@@ -11,4 +33,4 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript" src="http://disqus.com/forums/lxj/embed.js"></script>
 <noscript><a href="http://disqus.com/forums/lxj/?url=ref">View the discussion thread.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<div style="padding-left:20px;display:none"><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a></div>
