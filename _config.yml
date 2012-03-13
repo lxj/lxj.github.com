@@ -5,7 +5,6 @@ server: true
 auto:     true
 lsi:      false
 uto:      false
-server:   false
 safe:     false
 server_port: 4000
 pygments:    true
