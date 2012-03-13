@@ -1,18 +1,28 @@
 destination: ./_site
 plugins: ./_plugins
+
 server: true
-auto:        true
-lsi:         false
+auto:     true
+lsi:      false
+uto:      false
+server:   false
+safe:     false
 server_port: 4000
 pygments:    true
 markdown:    rdiscount
+
+exclude:   ["_lxj.bat", "_lxj.xml"]
+
 permalink:   date
 paginate: 15
 paginate_files:
   - page.html
+
 imgurl: http://assets.xmlhtml.cn/img
 url: http://www.lxj.com
+
 feed: /atom.xml
+
 name: SeanLou
 des: SeanLou
 author:
