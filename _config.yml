@@ -14,8 +14,6 @@ exclude:   ["_lxj.bat", "_lxj.xml"]
 
 permalink:   date
 paginate: 15
-paginate_files:
-  - page.html
 
 imgurl: http://assets.xmlhtml.cn/img
 url: http://www.lxj.com
