@@ -321,13 +321,13 @@ img.alignleft, img.alignright, img.aligncenter {
 	.post-info .pi,.post-info2 .pi{float:left;margin-right:10px}
 	.post-info{margin:0 -10px 8px -20px}
 	.post-info2{margin:0 -20px 20px}
-	.post-content{padding:0 10px 20px;color:#626566;font:17px/1.6 "微软雅黑" ,Georgia, serif;}
+	.post-content{padding:0 10px 20px;color:#333;font:14px/1.6 Georgia, serif;}
 	.post-content a{color:#f55b2c;border-bottom: 1px solid #E0E2E1;margin-top: -1px;padding: 1px 0;text-decoration:none;}
 	.post-content a:hover{background-color: #fff7a5;color: #131313;border-color:#F55B2C;}
 	.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5 { margin-bottom: 10px; margin-top: 25px; }
 	.post-content p{margin-bottom:20px}
-	.post-content ul li{list-style:inside disc;padding-bottom:10px}
-	.post-content ol li{list-style:inside decimal;padding-bottom:10px}
+	.post-content ul li{list-style:inside disc;padding-bottom:2px}
+	.post-content ol li{list-style:inside decimal;padding-bottom:2px}
 	.post-content hr {background-color: #e0e2e1; border:0;height:1px;}
 	.post-content h1,.post-content h2,.post-content h3,.post-content h4,.post-content h5,.post-content h6{color:#424242;font-weight:bold;line-height: 1.2;font-family: "微软雅黑" , Georgia, serif;}
 	.post-content h1 {font-size:24px}
@@ -336,7 +336,7 @@ img.alignleft, img.alignright, img.aligncenter {
 	.post-content h4 {font-size:13px;text-transform: uppercase; letter-spacing: 1px; }
 
 .post-listing .post-item{padding:10px 0;border-bottom:1px solid #ccc}
-	.post-listing .post-content{font:14px/1.5 "微软雅黑" ,Georgia, serif;padding-bottom:0px}
+	.post-listing .post-content{font:14px/1.6 Georgia, serif;padding-bottom:0px}
 
 #github-badge img { float: left }
 
@@ -366,6 +366,14 @@ pre{
     line-height: 19px;
     overflow: auto;
     padding: 6px 10px;
+}
+
+pre code{
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    margin: 0;
+    padding: 0;
+    white-space: pre;
 }
 
 table {
