@@ -4,5 +4,5 @@ auto:        true
 lsi:         false
 server_port: 4000
 pygments:    true
-markdown:    redcloth
+markdown:    rdiscount
 permalink:   date
