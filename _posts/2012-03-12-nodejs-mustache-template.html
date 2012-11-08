@@ -1,0 +1,56 @@
+---
+layout: post
+title: Node.js使用 Mustache.js做模板
+category: javascript
+description: 为了让 Node.js 输出更多的 HTML 元素，我们可以借助一些 html 模板引擎，例如 Mustache
+tags: nodejs mustache template
+---
+<p>From:<a href="http://www.oschina.net/question/12_21806" target="_blank">http://www.oschina.net/question/12_21806</a></p>
+<p>为了让 Node.js 输出更多的 HTML 元素，我们可以借助一些 html 模板引擎，例如 Mustache。</p> 
+<p>首先在 Node.js 中安装 Mustache：</p> 
+<p>npm install mustache</p> 
+<p>这会创建一个目录：node_modules\mustache</p> 
+<p>然后我们可以编写代码：</p> 
+<pre class="brush:js; toolbar: true; auto-links: false;">    var mustache = require('./node_modules/mustache/mustache');
+     
+    function helloworld(response)
+    {
+      console.log('request recieved at ' + (new Date()).getTime());
+      response.writeHead(200, {'Content-Type': 'text/html'});
+      var template = '&lt;h1&gt;Test&lt;/h1&gt;&lt;p&gt;{{helloworld}}&lt;/p&gt;';
+      var model = {helloworld:'Hello World'};
+      response.end(mustache.to_html(template,model));
+    }
+     
+    exports.helloworld = helloworld;</pre> 
+<p>这段代码使用 to_html 函数生成网页，来看看执行效果：</p> 
+<p><img width="850" alt="" src="http://assets.xmlhtml.cn/img/14105211_OguQ.png" /></p>
+<p>但这看起来很不爽，我们希望模板独立于控制器之外，例如下面的模板：</p> 
+<pre class="brush:html; toolbar: true; auto-links: false;">    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;My first template&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;Test&lt;/h1&gt;
+        &lt;p&gt;{{helloworld}}&lt;/p&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;</pre> 
+<p>文件名是 helloworld.html.</p> 
+<p>为了使用这个模板文件，我们可以这样编写代码：</p> 
+<pre class="brush:js; toolbar: true; auto-links: false;">    var mustache = require('./node_modules/mustache/mustache');
+    var fs = require('fs');
+     
+    function helloworld(response)
+    {
+      console.log('request recieved at ' + (new Date()).getTime());
+      fs.readFile(&quot;./helloworld.html&quot;,function(err,template) {
+                response.writeHead(200, {'Content-Type': 'text/html'})
+                response.write(mustache.to_html(template.toString(), {helloworld:&quot;Hello World&quot;}))
+                response.end()
+         });
+    }
+     
+    exports.helloworld = helloworld;</pre> 
+<p>运行结果如下：</p> 
+<p><img width="850" alt="" src="http://assets.xmlhtml.cn/img/14105214_UPGS.png" /></p>
+<p>怎样，简单很多吧？:)</p>
