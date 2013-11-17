@@ -7,7 +7,7 @@
                 "\\.html?$"            : "html",
                 ".*"                   : "text"                
         },
-        "title"  : "Akira's Blog",
+        "title"  : "Lou's Blog",
         "comment"  : "on",
         "domain-alias"  : ["blog.weizoo.com"],
         "friends"  : [
