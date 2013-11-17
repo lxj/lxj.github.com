@@ -1,0 +1,25 @@
+{
+        "docs"      : ["_posts"],        
+        "perpage"   : 5,
+        "types"     : {
+                "\\.(md||markdown)$"   : "markdown", 
+                "\\.(js||css||json)$"  : "code",
+                "\\.html?$"            : "html",
+                ".*"                   : "text"                
+        },
+        "title"  : "Akira's Blog",
+        "comment"  : "on",
+        "domain-alias"  : ["blog.weizoo.com"],
+        "friends"  : [
+                {
+                        "name"  : "typeof.net",
+                        "title" : "typeof.net",
+                        "url"  :  "http://typeof.net/"
+                },
+                {
+                        "name"  : "never-online",
+                        "title" : "rank's technical notes",
+                        "url"        : "http://never-online.net/blog/"
+                }
+        ] 
+}
