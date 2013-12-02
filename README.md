@@ -1,6 +1,6 @@
 #  lxj.github.com
 
-## Love FE 1
+## Love FE
 
 - PPS.TV
 - caohejin yishan road xuhuiqu shanghai
