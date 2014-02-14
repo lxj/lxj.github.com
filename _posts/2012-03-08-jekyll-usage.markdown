@@ -41,9 +41,6 @@ An overview of what each of these does:
 
 Stores [[configuration|Configuration]] data. A majority of these options can be specified from the command line executable but it's easier to throw them in here so you don't have to remember them.
 
-### _includes
-
-These are the partials that can be mixed and matched by your _layouts and _posts to facilitate reuse.  The liquid tag <code>{% include file.ext %}</code> can be used to include the partial in _includes/file.ext1.
 
 ### _layouts
 
