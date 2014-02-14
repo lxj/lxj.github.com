@@ -4,8 +4,9 @@ title: Jekyll Usage
 description: Creating a Jekyll site usually involves the following, [[once jekyll is installed.|Install]]
 category: other
 tags: Jekyll data
-from:https://github.com/mojombo/jekyll/wiki/Usage
 ---
+
+From:https://github.com/mojombo/jekyll/wiki/Usage
 
 Creating a Jekyll site usually involves the following, [[once jekyll is installed.|Install]]
 
