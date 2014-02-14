@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="{{ site.author.name }}" />
+    <meta name="description" content="{{ page.description }}" />
+    <meta name="keywords" content="{{ page.keywords | join: ',' }}" />
+    {% if page.title != null %}
+    <title>{{page.title}} | {{ page.author }} - {{ page.desc }}</title>
+    {% else %}
+    <title>{{ page.author }} - {{ page.desc }}</title>
+    {% endif %}
+    <link rel="stylesheet" href="/assets/css/lxj.css" type="text/css" media="screen" charset="utf-8"/>
+	 <script src="/assets/js/lxj.js"></script>
+    <!--[if lt IE 9]>
+    <script src="/assets/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- page -->
+    <div id="page">
+
+      <header id="hd">
+
+			<div class="masthead">
+			  <h1 id="logo"><a href="/">{{ page.author }}</a></h1>
+			  <p id="site-des" class="description">{{ page.desc }}</p>
+			  <div id="search">{% include searchform.html %}</div>
+			</div>
+			  
+			  <nav>
+				  <div id="navi">
+					<ul id="nav">
+						{% capture index %}{{ 'index' }}{% endcapture %}
+						{% capture archives %}{{ 'archives' }}{% endcapture %}
+						{% capture pageall %}{{ 'pageall' }}{% endcapture %}
+						{% capture about %}{{ 'about' }}{% endcapture %}
+						{% if page.name == index %}
+						<li class="page_item select"><a href="/">首页</a></li>
+						{% else %}
+						<li class="page_item"><a href="/">首页</a></li>
+						{% endif %}
+
+						{% if page.name == about %}
+						<li class="page_item select"><a href="/about.html">关于我</a></li>
+						{% else %}
+						<li class="page_item"><a href="/about.html">关于我</a></li>
+						{% endif %}
+					</ul>
+				  </div>
+			  </nav>
+      </header>
