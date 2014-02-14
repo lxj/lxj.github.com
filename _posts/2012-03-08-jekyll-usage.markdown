@@ -6,7 +6,7 @@ category: other
 tags: Jekyll data
 ---
 
-From:<https://github.com/mojombo/jekyll/wiki/Usage>
+From:https://github.com/mojombo/jekyll/wiki/Usage
 
 Creating a Jekyll site usually involves the following, [[once jekyll is installed.|Install]]
 
