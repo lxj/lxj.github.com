@@ -3,7 +3,6 @@ layout: post
 title: (转载)应用jekyll构建基于github page的博客
 categories:
     - other
-description: 基于github page的博客
 tags: Jekyll github 博客
 ---
 基于github page的博客好处:

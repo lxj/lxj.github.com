@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Jekyll Template data
-description: Jekyll traverses your site looking for files to process
 category: other
 tags: Jekyll data
 ---

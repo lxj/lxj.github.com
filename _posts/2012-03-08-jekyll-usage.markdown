@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Jekyll Usage
-description: Creating a Jekyll site usually involves the following, [[once jekyll is installed.|Install]]
 categories:
     - other
 tags: Jekyll data
