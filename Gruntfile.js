@@ -19,6 +19,31 @@ module.exports = function(grunt) {
         }
       }
     },
+      concat: {
+        options: {
+          separator: ';',
+        },
+        css: {
+          src: [
+          'src/css/lxj.css', 
+          'assets/app/_syntaxhighlighter/styles/shCore.css',
+           'assets/app/_syntaxhighlighter/styles/shThemeDefault2.css'
+           ],
+          dest: 'assets/css/lxj.css',
+        },
+        js: {
+          src: [
+          'assets/app/_syntaxhighlighter/scripts/shCore.js', 
+          'assets/app/_syntaxhighlighter/scripts/shBrushJScript.js', 
+          'assets/app/_syntaxhighlighter/scripts/shBrushCss.js',
+          'assets/app/_syntaxhighlighter/scripts/shBrushXml.js',
+          'assets/app/_syntaxhighlighter/scripts/shBrushPlain.js',
+          'assets/app/_syntaxhighlighter/scripts/shBrushPhp.js',
+          'assets/js/_SyntaxHighlighter.source.js'
+          ],
+          dest: 'assets/js/lxj.js',
+        },
+      },
     uglify: {
       options: {
         mangle: {
@@ -41,8 +66,7 @@ module.exports = function(grunt) {
         files: [{
             expand: true,
             flatten: true,
-            src: ['src/**/*.css'],
-            dest: 'assets/css/',
+            src: ['assets/css/**/*.css']
         }]
       }
     },
@@ -53,11 +77,11 @@ module.exports = function(grunt) {
       },
       browserifyJs: {
         files: ['src/**/*.js'],
-        tasks: ['browserify:page','uglify']
+        tasks: ['browserify:page','concat:js','uglify']
       },
       cssminw:{
         files: ['src/**/*.css'],
-        tasks: ['cssmin']
+        tasks: ['concat:css','cssmin']
       }
     }
   });
@@ -66,6 +90,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-browserify');
 
 
@@ -73,6 +98,6 @@ module.exports = function(grunt) {
     grunt.log.writeln(target + ': ' + filepath + ' has ' + action);
   });
 
-  grunt.registerTask('default', ['browserify:page', 'uglify','cssmin', 'watch']);
+  grunt.registerTask('default', ['browserify:page','concat', 'uglify','cssmin', 'watch']);
 
 };
