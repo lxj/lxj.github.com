@@ -135,12 +135,11 @@ body {
 
 
 #bd {
-	margin: 0px auto;
-	width: 960px;
 	background: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	overflow: hidden;
+	margin-left:250px;
 }
 
 #main{padding:5px 10px 5px 20px;}
@@ -292,6 +291,9 @@ img.alignleft, img.alignright, img.aligncenter {
     	padding:5px 0px;
     	font:normal 24px/1.2 "Microsoft YaHei","微软雅黑","Microsoft JhengHei","华文黑体",STHeiti,Georgia,"Times New Roman",Times,serif;
     	letter-spacing: -0.2px;
+    }
+    .post-title .cat{
+        margin-right:10px;
     }
 	.post-info,.post-info2{
 		overflow:hidden;

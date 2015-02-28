@@ -12,11 +12,10 @@ name: index
 		<article class="post">
 		<div class="entry">
 			<h2 class="post-title">
-				<a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a>
+				<span class="cat">[<a href="/categories/?category={{ rpost.category | slugize }}">{{ rpost.category }}</a>]</span><a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a>
 			</h2>
 			<div class="post-info">
 				<span class="inpost-date"><time pubdate="{{ rpost.date | date_to_utc | date: '%Y-%m-%d' }}">{{ rpost.date | date_to_utc | date: "%Y-%m-%d" }}</time></span>
-				<span class="cat-info pi">Cat: <a href="/categories/?category={{ rpost.category | slugize }}">{{ rpost.category }}</a></span>
 				<span class="tag-list pi">Tags:{% for tag in rpost.tags %}<a href="/tags/?tag={{ tag  | slugize}}" class="tag-item">{{ tag }}</a>{% endfor %}</span>
 			</div>
 		</div>
