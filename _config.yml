@@ -2,15 +2,13 @@
 # Blog Settings
 #
 
-gems: [jekyll-test-plugin, jekyll-jsonify, jekyll-assets]
-
 # Jekyll Settings
 destination: ./_site
 markdown: rdiscount
 pygments: true
 paginate: 6
 paginate_path: /page:num
-permalink: /:title
+permalink: /:year/:month/:day/:title/
 baseurl: /
 #lsi: true
 
