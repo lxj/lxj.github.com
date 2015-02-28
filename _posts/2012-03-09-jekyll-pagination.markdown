@@ -24,7 +24,7 @@ production: false
 //add this line to add pagination
 paginate: 3 //the number of post per page
 ```
-
+<!-- more -->
 
 ## index.html 
 just add the posts and the pagination links:

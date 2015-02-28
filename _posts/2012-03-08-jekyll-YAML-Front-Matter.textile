@@ -23,6 +23,8 @@ Between the triple-dashed lines, you can set predefined variables (see below for
 
 When you use <code>UTF-8</code> encoding for your file, make it clear that no <code>BOM</code> header chars in your file. Or everything will blow up!
 
+<!-- more -->
+
 h2. Predefined Global Variables
 
 | Variable | Description |

@@ -17,6 +17,8 @@ h2. Global
 | @content@ | In layout files, this contains the content of the subview(s). This is the variable used to insert the rendered content into the layout. This is not used in post files or page files. |
 | @paginator@| When the @paginate@ configuration option is set, this variable becomes available for use. |
 
+<!-- more -->
+
 h2. Site
 
 | *Variable* | *Description* |

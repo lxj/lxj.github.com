@@ -22,6 +22,8 @@ Jekyll at its core is a text transformation engine. The concept behind the syste
 
 A basic Jekyll site usually looks something like this:
 
+<!-- more -->
+
 <pre>
 .
 |-- _config.yml

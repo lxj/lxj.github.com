@@ -28,6 +28,8 @@ h2. 挑个新的博客模板
 要求是基于html5、css3的免费模板，google之，发现个好地方: "http://freehtml5templates.com":http://freehtml5templates.com
 一页一页的挑吧，总会找到自己喜欢的，可以根据右下角的Tag Cloud进行筛选，现在看到本站的新样子就是找好久才看中的模板
 
+<!-- more -->
+
 h2. 绑定独立域名
 
 在godaddy中注册 "saberma.me":http://saberma.em 域名，.me专用于博客类型，但比.com贵一些，且没有优惠
