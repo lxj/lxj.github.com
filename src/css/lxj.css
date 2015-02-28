@@ -86,7 +86,7 @@ body {
 	font: 12px Arial, Helvetica, sans-serif;
 	line-height: 40px;
 }
-#nav .page_item a:hover {
+#nav .select a,#nav .page_item a:hover {
 	background-color: rgba(255,255,255,.1);
 	border: none;
 }
