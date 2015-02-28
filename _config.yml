@@ -43,7 +43,12 @@ gems:
 # jekyll-archives
 jekyll-archives:
   enabled: []
-  layout: 'archive'
+  layouts:
+    year: 'archive'
+    month: 'archive'
+    day: 'archive'
+    tag: 'archive'
+    category: 'archive'
   permalinks:
     year: '/:year/'
     month: '/:year/:month/'
