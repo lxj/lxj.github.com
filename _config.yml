@@ -16,12 +16,6 @@ markdown: rdiscount
 # markdown: redcarpet
 excerpt_separator: "<!-- more -->"
     
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - README.md
-  - Rakefile
-  - vendor
   
 # Disqus Comments
 disqus_short_name: barretlee
