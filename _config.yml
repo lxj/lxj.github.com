@@ -2,6 +2,8 @@
 # Blog Settings
 #
 
+gems: [jekyll-test-plugin, jekyll-jsonify, jekyll-assets]
+
 # Jekyll Settings
 destination: ./_site
 markdown: rdiscount
@@ -29,3 +31,16 @@ highlight: light
 author_name: Sean Lou
 author_email: louxiaojian@gmail.com
 author_info: <a href="http://www.lxj.name">SeanLou</a>
+
+# Plugins
+gems:
+  - jekyll-archives
+
+  
+# jekyll-archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: category_archives
+  permalinks:
+    category: /categories/:name/

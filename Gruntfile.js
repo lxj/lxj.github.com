@@ -29,7 +29,7 @@ module.exports = function(grunt) {
       target: {
         files: [{
           expand: true,
-          src: ['assets/**/*.js'],
+          src: ['assets/js/**/*.js'],
         }]
       }
     },
