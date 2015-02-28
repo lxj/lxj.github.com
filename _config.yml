@@ -9,9 +9,16 @@ pygments: true
 paginate: 6
 paginate_path: /page:num
 permalink: /:year/:month/:day/:title/
-baseurl: /
+baseurl: ""
 #lsi: true
 
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - Rakefile
+  - vendor
+  
 # Disqus Comments
 disqus_short_name: barretlee
 disqus_show_comment_count: true
