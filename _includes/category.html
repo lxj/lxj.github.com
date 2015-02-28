@@ -1,7 +1,6 @@
 
 <div id="category" style="padding:0 20px">
 	<h1 class="page-title"><a href="#">Category: {{ page.name }}</a></h1>
-	{{page.name}}
 	<div class="size" style="text-align:left;padding:15px 20px 0">A total of {{ site.categories[page.name] | size }}</div>
 	<ul id="blogs">
 	  {% for post in site.categories[page.name] %}
