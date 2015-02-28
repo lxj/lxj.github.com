@@ -1,8 +1,7 @@
 ---
 layout: post
 title: Jekyll Usage
-categories:
-    - other
+category: other
 tags: Jekyll data
 ---
 

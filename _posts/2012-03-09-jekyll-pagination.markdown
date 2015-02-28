@@ -1,9 +1,8 @@
 ---
 layout: post
 title: Jekyll Pagination
-categories:
-    - other
-tags: Jekyll Pagination
+category: plugins
+tags: ["Jekyll", Pagination]
 ---
 
 From:<a href="https://github.com/mojombo/jekyll/wiki/Usage">https://github.com/mojombo/jekyll/wiki/Usage</a>

@@ -13,7 +13,7 @@ id: index
 		<div class="entry">
 			<h2 class="post-title">
 			    <span class="time">{{ post.date | date_to_utc | date: "%Y-%m-%d" }}</span>
-				<span class="cat">[<a href="/categories/?category={{ post.category | slugize }}">{{ post.category }}</a>]</span>
+				<span class="cat">[<a href="/category/{{ post.category | slugize }}">{{ post.category }}</a>]</span>
 				<a href="{{ post.url }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a>
 				{% if post.categories %} • {% include category_links.html %}{% endif %}
 			</h2>
