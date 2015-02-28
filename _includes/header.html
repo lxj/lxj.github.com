@@ -29,8 +29,7 @@
 			  <div id="search">{% include searchform.html %}</div>
 			</div>
 			  
-			  <nav>
-				  <div id="navi">
+			  <nav id="navi"> 
 					<ul id="nav">
 						{% capture index %}{{ 'index' }}{% endcapture %}
 						{% capture archives %}{{ 'archives' }}{% endcapture %}
@@ -48,6 +47,5 @@
 						<li class="page_item"><a href="/about.html">关于我</a></li>
 						{% endif %}
 					</ul>
-				  </div>
 			  </nav>
       </header>

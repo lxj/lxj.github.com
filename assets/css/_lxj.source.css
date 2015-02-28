@@ -15,11 +15,11 @@ h1 a, h2 a, h3 a {
 }
 
 a, a:visited {
-    color:#6D9D30;
+    color:#303030;
 }
 
 a:hover, a:active {
-    color: #333;
+    color: #666;
 }
 
 /* render html5 elements as block */
@@ -44,8 +44,8 @@ body {
 	position: fixed;
 	top:0;
 	bottom:0;
-	color: #fff;
-	background:#000;
+	color: rgba(255, 255, 255, 0.6);
+	background-color: rgb(32, 32, 32);
 }
 .masthead {
 	padding: 10px 0px 20px 10px;
@@ -56,17 +56,12 @@ body {
 }
 
 .masthead h1 a, .masthead h1 a:visited{
+	color: #fff;
 	display: block;
-	color: #C0DF72;
-	}
-
-.masthead h1 a:hover{
-	color: #a6e5f4;
 }
 
 
 .masthead .description{
-	color: #a6e5f4;
 	font: 14px Georgia, "Times New Roman", Times, serif;
 }
 
@@ -76,42 +71,26 @@ body {
 }
 #nav {
 	list-style: none;
-	margin: 0 3px;
 	padding: 0px;
 	clear:both;
 }
 #nav .page_item {
-	height: 26px;
-	margin:5px 3px 0;
 	white-space: nowrap;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 #nav .page_item a{
 	color: #fff;
 	display: block;
 	text-decoration: none;
-	padding: 0px 10px;
-	font: bold 12px Arial, Helvetica, sans-serif;
-	line-height: 26px;
-}
-#nav li:hover {
-	background-position: 100% -36px;
+	padding: 0px 20px;
+	font: 12px Arial, Helvetica, sans-serif;
+	line-height: 40px;
 }
 #nav .page_item a:hover {
-	background-position: 0px -36px;
+	background-color: rgba(255,255,255,.1);
 	border: none;
 }
 
-#nav li.select{
-	color: #F55B2C;
-	text-decoration: none;
-	height:31px;
-	margin-top:0;
-}
-#nav .select a,#nav .select a:hover, #nav .select a:visited{
-	color: #F55B2C;
-	text-decoration: none;
-	padding-top:5px;
-}
 
 /*search form */
 #search {
