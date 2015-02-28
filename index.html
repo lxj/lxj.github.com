@@ -4,7 +4,6 @@ title:
 description: 收集和记录前端开发的点点滴滴。
 keywords: CSS,CSS3,HTML5,HTML,Javascript
 isIndex: true
-name: index
 id: index
 ---
 <ul class="post-listing">
@@ -22,6 +21,11 @@ id: index
         <div class="post-content">
           {{ post.excerpt }}
         </div>
+        {% if post.content contains site.excerpt_separator %}
+          <p class="post-continue">
+            <a href="{{ post.url | prepend: site.baseurl }}">Read on &rarr;</a>
+          </p>
+        {% endif %}
 		</article>
 	</li>
 	{% endfor %}

@@ -16,6 +16,18 @@ baseurl: ""
 markdown: redcarpet
 excerpt_separator: "<!-- more -->"
 
+# Markdown settings
+redcarpet:
+  extensions:
+    - no_intra_emphasis
+    - tables
+    - fenced_code_blocks
+    - autolink
+    - strikethrough
+    - superscript
+    - footnotes
+    - smart
+    
 exclude:
   - Gemfile
   - Gemfile.lock
