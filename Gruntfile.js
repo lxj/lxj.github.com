@@ -20,18 +20,18 @@ module.exports = function(grunt) {
       }
     },
       concat: {
-        options: {
-          separator: ';',
-        },
         css: {
           src: [
-          'src/css/lxj.css', 
-          'assets/app/_syntaxhighlighter/styles/shCore.css',
-           'assets/app/_syntaxhighlighter/styles/shThemeDefault2.css'
+            'src/css/lxj.css', 
+            'assets/app/_syntaxhighlighter/styles/shCore.css',
+            'assets/app/_syntaxhighlighter/styles/shThemeDefault2.css'
            ],
           dest: 'assets/css/lxj.css',
         },
         js: {
+            options: {
+              separator: ';',
+            },
           src: [
           'assets/app/_syntaxhighlighter/scripts/shCore.js', 
           'assets/app/_syntaxhighlighter/scripts/shBrushJScript.js', 
@@ -65,7 +65,6 @@ module.exports = function(grunt) {
         },
         files: [{
             expand: true,
-            flatten: true,
             src: ['assets/css/**/*.css']
         }]
       }
@@ -77,7 +76,7 @@ module.exports = function(grunt) {
       },
       browserifyJs: {
         files: ['src/**/*.js'],
-        tasks: ['browserify:page','concat:js','uglify']
+        tasks: ['concat:js','uglify']
       },
       cssminw:{
         files: ['src/**/*.css'],
@@ -98,6 +97,6 @@ module.exports = function(grunt) {
     grunt.log.writeln(target + ': ' + filepath + ' has ' + action);
   });
 
-  grunt.registerTask('default', ['browserify:page','concat', 'uglify','cssmin', 'watch']);
+  grunt.registerTask('default', ['concat', 'uglify','cssmin', 'watch']);
 
 };
