@@ -29,13 +29,3 @@ highlight: light
 author_name: Sean Lou
 author_email: louxiaojian@gmail.com
 author_info: <a href="http://www.lxj.name">SeanLou</a>
-
-categories:		
-	url: /categories/		
-	title_prefix: "blog - categories: "		
-	layout: category.html
-
-tags:		
-	url: /tags/		
-	title_prefix: "blog - tag: "		
-	layout: tag.html
