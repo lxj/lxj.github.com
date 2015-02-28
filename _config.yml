@@ -42,8 +42,7 @@ gems:
   
 # jekyll-archives
 jekyll-archives:
-  enabled:
-    - categories
+  enabled: all
   layout: category_archives
   permalinks:
     category: /category/:name/
