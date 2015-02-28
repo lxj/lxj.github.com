@@ -4,13 +4,17 @@
 
 # Jekyll Settings
 destination: ./_site
-markdown: rdiscount
 pygments: true
 paginate: 6
 paginate_path: /page/:num
 permalink: /:year/:month/:day/:title/
 baseurl: ""
 #lsi: true
+
+# Build settings
+# markdown: rdiscount
+markdown: redcarpet
+excerpt_separator: "<!-- more -->"
 
 exclude:
   - Gemfile
