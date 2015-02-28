@@ -1,12 +1,13 @@
+
 <div id="category" style="padding:0 20px">
-<h1 class="page-title"><a href="#">Category: {{ page.name }}</a></h1>
-<div class="size" style="text-align:left;padding:15px 20px 0">A total of {{ site.categories[page.name] | size }}</div>
-<ul id="blogs">
-  {% for post in site.categories[page.name] %}
-  <li>
-    <a href="{{post.url}}">{{post.title}}</a>
-	<span style="color:#909090;margin-left:10px;font-size:11px">{{post.date | date: "%Y-%m-%d"}}</span>
-  </li>
-  {% endfor %}
-</ul>
+	<h1 class="page-title"><a href="#">Category: {{ page.name }}</a></h1>
+	<div class="size" style="text-align:left;padding:15px 20px 0">A total of {{ site.categories[page.name] | size }}</div>
+	<ul id="blogs">
+	  {% for post in site.categories[page.name] %}
+	  <li>
+	    <a href="{{post.url}}">{{post.title}}</a>
+		<span style="color:#909090;margin-left:10px;font-size:11px">{{post.date | date: "%Y-%m-%d"}}</span>
+	  </li>
+	  {% endfor %}
+	</ul>
 </div>

@@ -7,7 +7,7 @@ isIndex: true
 name: index
 ---
 <ul class="post-listing">
-	{% for rpost in site.posts limit:5 %}
+	{% for rpost in site.posts %}
 	<li class="post-item">
 		<article class="post">
 		<div class="entry">
@@ -20,23 +20,8 @@ name: index
 				<span class="tag-list pi">Tags:{% for tag in rpost.tags %}<a href="/tags/{{ tag  | slugize}}" class="tag-item">{{ tag }}</a>{% endfor %}</span>
 			</div>
 		</div>
+		</article>
+	</li>
+	{% endfor %}
 
-		<div class="post-content">
-			<p>{{ rpost.description }}<a href="{{ rpost.url }}" title="Read More" rel="nofollow" class="v-more"><span>&#10149;</span>Read More</a></p>
-		</div>
-		</article>
-	</li>
-	{% endfor %}
-	
-	{% for npost in site.posts limit:10 offset:5  %}
-	<li class="post-item">
-		<article class="post">
-			<div class="entrytop">
-				<div class="entry">
-				<h2 class="post-title"><span class="inpost-date"><time pubdate="{{ npost.date | date_to_utc | date: '%Y-%m-%d' }}">{{ npost.date | date_to_utc | date: "%Y-%m-%d" }}</time></span><a href="{{ npost.url }}" title="{{ npost.title }}" rel="bookmark">{{ npost.title }}</a></h2>
-				</div>
-			</div>
-		</article>
-	</li>
-	{% endfor %}
 </ul>	
