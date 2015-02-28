@@ -35,22 +35,12 @@
 						{% capture archives %}{{ 'archives' }}{% endcapture %}
 						{% capture pageall %}{{ 'pageall' }}{% endcapture %}
 						{% capture about %}{{ 'about' }}{% endcapture %}
-						{% if page.name == index %}
-						<li class="page_item select"><a href="/">首页</a></li>
-						{% else %}
-						<li class="page_item"><a href="/">首页</a></li>
-						{% endif %}
-
-						{% if page.name == about %}
-						<li class="page_item select"><a href="/about.html">关于我</a></li>
-						{% else %}
-						<li class="page_item"><a href="/about.html">关于我</a></li>
-						{% endif %}
-
+						
+						<li class="page_item{% if page.name == index %} select{% endif %}"><a href="/">首页</a></li>
+						<li class="page_item{% if page.name == about %} select{% endif %}"><a href="/about.html">关于我</a></li>
 						{% for category in site.categories %}
-							<li class="page_item"><a href="/{{category | first}}.html">{{category | first}} ({{category | last | size }})</a></li>
+							<li class="page_item"><a href="/categories/?category={{category | first}}.">{{category | first}} ({{category | last | size }})</a></li>
 						{% endfor %}
-
 					</ul>
 			  </nav>
       </header>
