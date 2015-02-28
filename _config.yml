@@ -42,7 +42,11 @@ gems:
   
 # jekyll-archives
 jekyll-archives:
-  enabled: all
-  layout: category_archives
+  enabled: []
+  layout: 'archive'
   permalinks:
-    category: /category/:name/
+    year: '/:year/'
+    month: '/:year/:month/'
+    day: '/:year/:month/:day/'
+    tag: '/tag/:name/'
+    category: '/category/:name/'    
