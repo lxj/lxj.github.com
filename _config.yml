@@ -12,8 +12,8 @@ baseurl: ""
 #lsi: true
 
 # Build settings
-# markdown: rdiscount
-markdown: redcarpet
+markdown: rdiscount
+# markdown: redcarpet
 excerpt_separator: "<!-- more -->"
     
 exclude:
