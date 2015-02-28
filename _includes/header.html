@@ -46,6 +46,11 @@
 						{% else %}
 						<li class="page_item"><a href="/about.html">关于我</a></li>
 						{% endif %}
+
+						{% for category in site.categories %}
+							<li class="page_item"><a href="/{{category | first}}.html">{{category | first}} ({{category | last | size }})</a></li>
+						{% endfor %}
+
 					</ul>
 			  </nav>
       </header>
