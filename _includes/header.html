@@ -36,7 +36,7 @@
 						{% capture pageall %}{{ 'pageall' }}{% endcapture %}
 						{% capture about %}{{ 'about' }}{% endcapture %}
 						
-						{{page.name}}
+						{{page.name}}{{page.id}}
 						<li class="page_item{% if page.name == index %} select{% endif %}"><a href="/">首页</a></li>
 						<li class="page_item{% if page.name == archives %} select{% endif %}"><a href="/archives.html">archives</a></li>
 						<li class="page_item{% if page.name == pageall %} select{% endif %}"><a href="/page.html">pageall</a></li>
