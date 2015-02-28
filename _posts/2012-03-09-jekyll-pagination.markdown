@@ -2,7 +2,8 @@
 layout: post
 title: Jekyll Pagination
 description: Pagination does not work with markdown files, it only works with html file extensions
-category: other
+categories:
+    - other
 tags: Jekyll Pagination
 ---
 
