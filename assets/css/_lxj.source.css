@@ -33,31 +33,26 @@ body {
 	color: #333;
 	font-size: 14px;
 	line-height: 18px;
-	background: #EDF3F5 url(/assets/img/texture_3.png);
+	background: #fff
 }
 
-#page{background:#E0F4F9;}
+#page{background:#fff;}
 
 /* header area */
 #hd{
-	background: #000 url(/assets/img/head-bg.gif) repeat-x;
-	height: 126px;
-	position: relative;
-	color: #D16683;
+	width:240px;
+	position: fixed;
+	top:0;
+	bottom:0;
+	color: #fff;
+	background:#000;
 }
 .masthead {
-	position: relative;
-	padding: 10px 0px 0px 10px;
-	margin: 0px auto;
-	width: 960px;
+	padding: 10px 0px 20px 10px;
 }
 
 .masthead h1 {
 	line-height: 40px;
-	padding-right: 10px;
-	margin-right: 10px;
-	float:left;
-	border-right: 1px solid #669966;
 }
 
 .masthead h1 a, .masthead h1 a:visited{
@@ -71,39 +66,28 @@ body {
 
 
 .masthead .description{
-	float:left;
-	margin-top:18px;
 	color: #a6e5f4;
 	font: 14px Georgia, "Times New Roman", Times, serif;
 }
 
 #navi {
 	position:relative;
-	height: 36px;
-	width: 960px;
-	margin: 0px auto;
-	top: 14px;
-	text-align: center;
 	line-height: normal;
 }
 #nav {
 	list-style: none;
 	margin: 0 3px;
 	padding: 0px;
-	float: left;
 	clear:both;
 }
 #nav .page_item {
-	float: left;
 	height: 26px;
-	background: url(/assets/img/navtabr.gif) top right no-repeat;
 	margin:5px 3px 0;
 	white-space: nowrap;
 }
 #nav .page_item a{
-	color: #13475f;
+	color: #fff;
 	display: block;
-	background: url(/assets/img/navtabl.gif) top left no-repeat;
 	text-decoration: none;
 	padding: 0px 10px;
 	font: bold 12px Arial, Helvetica, sans-serif;
@@ -122,17 +106,16 @@ body {
 	text-decoration: none;
 	height:31px;
 	margin-top:0;
-	background: url(/assets/img/navtabactiver.gif) top right no-repeat;
 }
 #nav .select a,#nav .select a:hover, #nav .select a:visited{
 	color: #F55B2C;
 	text-decoration: none;
 	padding-top:5px;
-	background: url(/assets/img/navtabactivel.gif) top left no-repeat;
 }
 
 /*search form */
 #search {
+	display: none;
 	float: right;
 	position:relative;
 	background: url(/assets/img/search-bg.png) no-repeat;
@@ -176,13 +159,12 @@ body {
 	margin: 0px auto;
 	width: 960px;
 	background: white;
-	border-top: 2px solid #B9E8F4;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	overflow: hidden;
 }
 
-#main{float:left;width:660px;padding:5px 10px 5px 20px;}
+#main{padding:5px 10px 5px 20px;}
 
 .t-list .t-item{
     background: url(/assets/img/mini-blogroll.gif) no-repeat left center !important;
@@ -208,10 +190,11 @@ body {
 }
 
 #siderbar {
+	display: none;
 	float: right;
 	text-align: left;
 	width: 240px;
-	margin-right:10px;display:inline;
+	margin-right:10px;;
 }
 
 #siderbar h2, #siderbar .sidebartitle{
@@ -245,6 +228,7 @@ body {
 
 /* footer area */
 #ftbg {
+	display: none;
 	clear: both;
 	background:#132f3c url(/assets/img/footer-bg.gif) repeat-x;
 	border-top: 1px solid #7FD4F4;
@@ -314,10 +298,28 @@ img.alignleft, img.alignright, img.aligncenter {
 .tag-item{margin-right:10px}
 
 .post{zoom:1}
-    .entry{position:relative;zoom:1;padding:0 105px 5px 0;}
-	.entry .inpost-date {position:absolute;right:0;top:10px;background: url(/assets/img/post-date.gif) no-repeat left center;color:#9EC13F;font:bold 11px "trebuchet MS","Lucida Sans Unicode",Georgia;padding-left:38px;}
-    .post-title{margin:0;padding:5px 0px;font:bold 16px/1.2 "Microsoft YaHei","微软雅黑","Microsoft JhengHei","华文黑体",STHeiti,Georgia,"Times New Roman",Times,serif;letter-spacing: -0.2px;}
-	.post-info,.post-info2{overflow:hidden;zoom:1;background:#f4f8f9;border-bottom:1px solid #e6f0f2;border-top:1px solid #e6f0f2;line-height:30px;padding:0 20px}
+    .entry{
+    	position:relative;
+    	zoom:1;
+    	padding:0 105px 5px 0;
+    }
+	.entry .inpost-date {
+		color:#9EC13F;
+		font:bold 11px "trebuchet MS","Lucida Sans Unicode",Georgia;
+		padding-left:38px;
+	}
+    .post-title{
+    	margin:0;
+    	padding:5px 0px;
+    	font:normal 24px/1.2 "Microsoft YaHei","微软雅黑","Microsoft JhengHei","华文黑体",STHeiti,Georgia,"Times New Roman",Times,serif;
+    	letter-spacing: -0.2px;
+    }
+	.post-info,.post-info2{
+		overflow:hidden;
+		zoom:1;
+		line-height:30px;
+		padding:0 20px
+	}
 	.post-info .pi,.post-info2 .pi{float:left;margin-right:10px}
 	.post-info{margin:0 -10px 8px -20px}
 	.post-info2{margin:0 -20px 20px}
@@ -335,7 +337,9 @@ img.alignleft, img.alignright, img.aligncenter {
 	.post-content h3 {font-size:16px}
 	.post-content h4 {font-size:13px;text-transform: uppercase; letter-spacing: 1px; }
 
-.post-listing .post-item{padding:10px 0;border-bottom:1px solid #ccc}
+.post-listing .post-item{
+	padding:10px 0 30px 0px;
+}
 	.post-listing .post-content{font:14px/1.6 Georgia, serif;padding-bottom:0px}
 
 #github-badge img { float: left }
