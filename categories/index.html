@@ -1,0 +1,11 @@
+---
+title: 分类标签
+layout: default
+---
+<section class="content">
+	<article>
+	{% for category in site.categories %}
+	<a href="#"  style="margin-right:20px">{{category | first}} ({{category | last | size }})</a>
+	{% endfor %}
+	</article>
+</section>
