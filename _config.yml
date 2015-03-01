@@ -47,7 +47,6 @@ js:
 gems:
   - jekyll-archives
   - jekyll-redirect-from
-  - jekyll-sitemap
 
   
 # jekyll-archives

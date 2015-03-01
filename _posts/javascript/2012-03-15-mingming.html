@@ -17,6 +17,15 @@ category: javascript
    // 这个方法仅在类内部或者其它继承它的类中可用
    protected function __behindTheScenesMethod() {}
 }</pre>
+{% highlight ruby linenos %}
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}
 <!-- more -->
 <h4>JavaScript方式</h4>
 <pre class="brush: jscript; title: ; notranslate" title="">var Female = (function() {
