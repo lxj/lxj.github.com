@@ -2,12 +2,9 @@
 
 module.exports = function(grunt) {
 
-  //grunt.file.defaultEncoding = 'gbk';
-  var pkg = grunt.file.readJSON("package.json");
   var timestamp = grunt.template.today("yyyymmdd-HH-MM-ss");
 
   grunt.initConfig({
-    pkg: pkg,
     browserify: {
       page: {
         expand: true,
@@ -19,32 +16,32 @@ module.exports = function(grunt) {
         }
       }
     },
-      concat: {
-        css: {
-          src: [
-            'src/css/lxj.css', 
-            'src/css/highlight.css',
-            'assets/app/_syntaxhighlighter/styles/shCore.css',
-            'assets/app/_syntaxhighlighter/styles/shThemeDefault2.css'
-           ],
-          dest: 'assets/css/lxj.css',
+    concat: {
+      css: {
+        src: [
+          'src/css/lxj.css', 
+          'src/css/highlight.css',
+          'assets/app/_syntaxhighlighter/styles/shCore.css',
+          'assets/app/_syntaxhighlighter/styles/shThemeDefault2.css'
+        ],
+        dest: 'assets/css/lxj.css'
+      },
+      js: {
+        options: {
+          separator: ';',
         },
-        js: {
-            options: {
-              separator: ';',
-            },
-          src: [
+        src: [
           'assets/app/_syntaxhighlighter/scripts/shCore.js', 
           'assets/app/_syntaxhighlighter/scripts/shBrushJScript.js', 
           'assets/app/_syntaxhighlighter/scripts/shBrushCss.js',
           'assets/app/_syntaxhighlighter/scripts/shBrushXml.js',
           'assets/app/_syntaxhighlighter/scripts/shBrushPlain.js',
           'assets/app/_syntaxhighlighter/scripts/shBrushPhp.js',
-          'assets/js/_SyntaxHighlighter.source.js'
-          ],
-          dest: 'assets/js/lxj.js',
-        },
+          'src/js/syntaxHighlighter.js'
+        ],
+        dest: 'assets/js/lxj.js'
       },
+    },
     uglify: {
       options: {
         mangle: {
@@ -86,13 +83,11 @@ module.exports = function(grunt) {
     }
   });
 
-
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-browserify');
-
 
   grunt.event.on('watch', function(action, filepath, target) {
     grunt.log.writeln(target + ': ' + filepath + ' has ' + action);

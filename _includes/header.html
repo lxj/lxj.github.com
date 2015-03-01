@@ -50,9 +50,6 @@
 						<li class="page_item{% if page.id == archives %} select{% endif %}"><a href="/archives.html">archives</a></li>
 						<li class="page_item{% if page.id == pageall %} select{% endif %}"><a href="/page.html">pageall</a></li>
 						<li class="page_item{% if page.id == about %} select{% endif %}"><a href="/about.html">关于我</a></li>
-						{% for category in site.categories %}
-						<li class="page_item"><a href="/categories/?category={{category | first}}">{{category | first}} ({{category | last | size }})</a></li>
-						{% endfor %}
 						
 					</ul>
 			  </nav>

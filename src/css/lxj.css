@@ -4,7 +4,6 @@
 }
 
 h1,h2,h3,h4,h5,h6 {
-	font-weight: bold;
 	clear: both;
 	color: #333;
 	padding-top: 5px;
@@ -16,10 +15,12 @@ h1 a, h2 a, h3 a {
 
 a, a:visited {
     color:#303030;
+    text-decoration: none;
 }
 
 a:hover, a:active {
     color: #666;
+    text-decoration: underline;
 }
 
 /* render html5 elements as block */
@@ -29,10 +30,8 @@ header, footer, section, aside, nav, article {
 
 body {
 	line-height: 1;
-	font-family:  Arial, Helvetica, sans-serif;
+	font:14px/1.6 Consolas, "Liberation Mono", Menlo, Courier, monospace,Helvetica, Arial, sans-serif;
 	color: #333;
-	font-size: 14px;
-	line-height: 18px;
 	background: #fff
 }
 
@@ -61,10 +60,6 @@ body {
 }
 
 
-.masthead .description{
-	font: 14px Georgia, "Times New Roman", Times, serif;
-}
-
 #navi {
 	position:relative;
 	line-height: normal;
@@ -83,7 +78,6 @@ body {
 	display: block;
 	text-decoration: none;
 	padding: 0px 20px;
-	font: 12px Arial, Helvetica, sans-serif;
 	line-height: 40px;
 }
 #nav .select a,#nav .page_item a:hover {
@@ -119,7 +113,6 @@ body {
 	background: #fff;
 	margin-right: 2px;
 	color: #000000;
-	font-weight: normal;
 }
 /* search form button - to specify button only use input[type="submit"] */
 #searchform input {
@@ -127,7 +120,6 @@ body {
 	border: none;
 	height: 25px;
 	width:27px;
-	font: bold 12px Arial, Helvetica, sans-serif;
 	color: #FFF;
 	background:url(/assets/img/search_button_arrow.png);
 	vertical-align: middle;
@@ -176,7 +168,6 @@ body {
 }
 
 #siderbar h2, #siderbar .sidebartitle{
-    font: lighter 1.3em/1em "trebuchet MS", "Lucida Sans Unicode", Georgia;
     color: #006699;
     border-bottom: 1px dotted #1888B8;
     padding-bottom: 5px;
@@ -281,10 +272,12 @@ img.alignleft, img.alignright, img.aligncenter {
     	zoom:1;
     	padding:0 105px 5px 0;
     }
-	.entry .inpost-date {
-		color:#9EC13F;
-		font:bold 11px "trebuchet MS","Lucida Sans Unicode",Georgia;
-		padding-left:38px;
+	.entry .time {
+		color:#ccc;
+		font-size:11px;
+	}
+	.entry .meta{
+	    padding-left:10px;
 	}
     .post-title{
     	margin:0;
@@ -301,27 +294,87 @@ img.alignleft, img.alignright, img.aligncenter {
 		line-height:30px;
 		padding:0 20px
 	}
-	.post-info .pi,.post-info2 .pi{float:left;margin-right:10px}
-	.post-info{margin:0 -10px 8px -20px}
-	.post-info2{margin:0 -20px 20px}
-	.post-content{padding:0 10px 20px;color:#333;font:14px/1.6 Georgia, serif;}
-	.post-content a{color:#f55b2c;border-bottom: 1px solid #E0E2E1;margin-top: -1px;padding: 1px 0;text-decoration:none;}
-	.post-content a:hover{background-color: #fff7a5;color: #131313;border-color:#F55B2C;}
-	.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5 { margin-bottom: 10px; margin-top: 25px; }
-	.post-content p{margin-bottom:20px}
-	.post-content ul li{list-style:inside disc;padding-bottom:2px}
-	.post-content ol li{list-style:inside decimal;padding-bottom:2px}
-	.post-content hr {background-color: #e0e2e1; border:0;height:1px;}
-	.post-content h1,.post-content h2,.post-content h3,.post-content h4,.post-content h5,.post-content h6{color:#424242;font-weight:bold;line-height: 1.2;font-family: "微软雅黑" , Georgia, serif;}
-	.post-content h1 {font-size:24px}
-	.post-content h2 {font-size:18px}
-	.post-content h3 {font-size:16px}
-	.post-content h4 {font-size:13px;text-transform: uppercase; letter-spacing: 1px; }
+	.post-info .pi,.post-info2 .pi{
+	    float:left;
+	    margin-right:10px
+	}
+	.post-info{
+	    margin:0 -10px 8px -20px
+	}
+	.post-info2{
+	    margin:0 -20px 20px
+	}
+	.post-content{
+	    padding:0 10px 20px;
+	    color:#333;
+	}
+	.post-content a{
+	    color:#f55b2c;
+	    border-bottom: 1px solid #E0E2E1;
+	    margin-top: -1px;
+	    padding: 1px 0;
+	    text-decoration:none;
+	}
+	.post-content a:hover{
+	    background-color: #fff7a5;
+	    color: #131313;
+	    border-color:#F55B2C;
+	}
+	.post-content h1, 
+	.post-content h2, 
+	.post-content h3, 
+	.post-content h4, 
+	.post-content h5 { 
+	    margin-bottom: 10px; 
+	    margin-top: 25px; 
+	}
+	.post-content p{
+	    margin-bottom:20px
+	}
+	.post-content ul li{
+	    list-style:inside disc;
+	    padding-bottom:2px
+	}
+	.post-content ol li{
+	    list-style:inside decimal;
+	    padding-bottom:2px
+	}
+	.post-content hr {
+	    background-color: #e0e2e1; 
+	    border:0;height:1px;
+	}
+	.post-content h1,
+	.post-content h2,
+	.post-content h3,
+	.post-content h4,
+	.post-content h5,
+	.post-content h6{
+	    color:#424242;
+	    font-weight:bold;
+	    line-height: 1.2;
+	    font-family: "微软雅黑" , Georgia, serif;
+	}
+	.post-content h1 {
+	    font-size:24px
+	}
+	.post-content h2 {
+	    font-size:18px
+	}
+	.post-content h3 {
+	    font-size:16px
+	}
+	.post-content h4 {
+	    font-size:13px;
+	    text-transform: uppercase; 
+	    letter-spacing: 1px; 
+	}
 
 .post-listing .post-item{
 	padding:10px 0 30px 0px;
 }
-	.post-listing .post-content{font:14px/1.6 Georgia, serif;padding-bottom:0px}
+	.post-listing .post-content{
+	    padding-bottom:0px
+	}
 
 #github-badge img { float: left }
 
@@ -338,11 +391,9 @@ code, tt {
     margin: 0 2px;
     padding: 0 5px;
     white-space: nowrap;
-	font: 12px 'Bitstream Vera Sans Mono','Courier',monospace;
 }
 
 pre{
-    font: 12px 'Bitstream Vera Sans Mono','Courier',monospace;
     margin: 15px 0;
     background-color: #F8F8F8;
     border: 1px solid #CCCCCC;
