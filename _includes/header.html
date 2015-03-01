@@ -5,6 +5,7 @@
     <meta name="author" content="{{ site.author.name }}" />
     <meta name="description" content="{{ page.description }}" />
     <meta name="keywords" content="{{ page.keywords | join: ',' }}" />
+    
     {% if page.title != null %}
     <title>{{page.title}} | {{ page.author }} - {{ page.desc }}</title>
     {% else %}
@@ -12,12 +13,13 @@
     {% endif %}
     
     <link rel="author" href="https://plus.google.com/112825052932953734087" />
+    
 	{% for css in site.css %}
-		<link rel="stylesheet" href="{{ css }}" type="text/css"  media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="{{ css }}" type="text/css"  media="screen" charset="utf-8" />
 	{% endfor %}
 	
 	{% for js in site.js %}
-		<script src="{{ js }}"></script>
+	<script src="{{ js }}"></script>
 	{% endfor %}
 	 
     <!--[if lt IE 9]>
@@ -49,8 +51,9 @@
 						<li class="page_item{% if page.id == pageall %} select{% endif %}"><a href="/page.html">pageall</a></li>
 						<li class="page_item{% if page.id == about %} select{% endif %}"><a href="/about.html">关于我</a></li>
 						{% for category in site.categories %}
-							<li class="page_item"><a href="/categories/?category={{category | first}}">{{category | first}} ({{category | last | size }})</a></li>
+						<li class="page_item"><a href="/categories/?category={{category | first}}">{{category | first}} ({{category | last | size }})</a></li>
 						{% endfor %}
+						
 					</ul>
 			  </nav>
       </header>
