@@ -1,28 +1,52 @@
+
+
 <div class="post">
-  <h1 class="post-title2"><a href='{{page.url}}'>{{page.title}}</a></h1>
-  <div class="meta">
-      <span class="time">{{ post.date | date_to_utc | date: "%Y-%m-%d" }}</span> • <span class="cat"><a href="/category/{{ post.category | slugize }}">{{ post.category }}</a></span>
-      <span class="tag-list">Tags:{% for tag in page.tags %}<a href="/tag/{{ tag| slugize }}" class="tag-item">{{ tag }}</a>{% endfor %}</span>
-  </div>		
-  <div class="post-content">
-    {% if page.img %}
-      <img src="{{page.img}}" alt="" />
-    {% endif %}
-  
-    {{ content }}
-  </div>
-  
-  <nav class="v-pagination">
-  	{% if page.next %}
-	<a class="next" href="{{ page.next.url }}" rel="bookmark">Next:{{ page.next.title | truncatewords:5 }}</a>
-	{% endif %}
-    <br />
-	{% if page.previous %}
-	<a class="prev" href="{{ page.previous.url }}" rel="bookmark">Previous:{{ page.previous.title | truncatewords:5 }}</a>
-	{% endif %}
- </nav>
+
+      <div class="entry">
+      
+          <h1 class="post-title"><a href='{{page.url}}'>{{page.title}}</a></h1>
+          
+          <div class="meta">
+          
+              <span class="cat">post in • <a href="/category/{{ page.category | slugize }}">{{ page.category }}</a></span>
+              
+              <span class="time">at {{ page.date | date: "%Y-%m-%d" }}</span>
+              
+              {% if page.tags %}
+		            <span class="tag-list">
+		            Tags:{% for tag in page.tags %}
+		            <a href="/tag/{{ tag| slugize }}" class="tag-item">{{ tag }}</a>
+		            {% endfor %}
+		            </span>
+              {% endif %}
+              
+          </div>
+          
+      </div>
+      
+      <div class="post-content">
+        {% if page.img %}
+          <img src="{{page.img}}" alt="" />
+        {% endif %}
+      
+        {{ content }}
+        
+      </div>
+      
+      <nav class="v-pagination">
+      
+      	{% if page.previous %}
+	    <a class="prev" href="{{ page.previous.url }}" rel="bookmark">{{ page.previous.title | truncatewords:5 }} &raquo; </a>
+	    {% endif %}
+	
+      	{% if page.next %}  
+	    <a class="next" href="{{ page.next.url }}" rel="bookmark">&laquo; {{ page.next.title | truncatewords:5 }}</a>
+	    {% endif %}
+	
+     </nav>
  
 </div>
+
 <script type="text/javascript" charset="utf-8">
   var disqus_url = "http://lxj.name{{page.url}}";
   var disqus_developer = 1;
@@ -31,4 +55,8 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript" src="http://disqus.com/forums/lxj/embed.js"></script>
 <noscript><a href="http://disqus.com/forums/lxj/?url=ref">View the discussion thread.</a></noscript>
-<div style="padding-left:20px;display:none"><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a></div>
+<div style="padding-left:20px;display:none">
+	<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+

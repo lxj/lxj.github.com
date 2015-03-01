@@ -37,6 +37,39 @@ body {
 
 #page{background:#fff;}
 
+.author-card{
+    position:relative;
+    *zoom: 1;
+    padding: 10px 0px 10px 70px;
+    min-height:60px;
+}
+
+.author-card .avatar-wrap{
+    position:absolute;
+    top:6px;
+    left:0;
+    width:60px;
+}
+.author-card .avatar-wrap .avatar{
+    width:60px;
+    height:60px;
+    -webkit-border-radius:50%;
+    border-radius:50%;
+}
+
+.author-card .t {
+	line-height: 26px;
+}
+
+.author-card .t a, .masthead .t a:visited{
+	color: #fff;
+	display: block;
+}
+
+.author-card .t a:hover{
+    text-decoration: none;
+}
+
 /* header area */
 #hd{
 	width:240px;
@@ -47,16 +80,9 @@ body {
 	background-color: rgb(32, 32, 32);
 }
 .masthead {
+    position:relative;
+    *zoom: 1;
 	padding: 10px 0px 20px 10px;
-}
-
-.masthead h1 {
-	line-height: 40px;
-}
-
-.masthead h1 a, .masthead h1 a:visited{
-	color: #fff;
-	display: block;
 }
 
 
@@ -134,7 +160,9 @@ body {
 	margin-left:250px;
 }
 
-#main{padding:5px 10px 5px 20px;}
+#main{
+    padding:5px 10px 5px 20px;
+}
 
 .t-list .t-item{
     background: url(/assets/img/mini-blogroll.gif) no-repeat left center !important;
@@ -159,51 +187,9 @@ body {
     padding-left: 10px !important;
 }
 
-#siderbar {
-	display: none;
-	float: right;
-	text-align: left;
-	width: 240px;
-	margin-right:10px;;
-}
-
-#siderbar h2, #siderbar .sidebartitle{
-    color: #006699;
-    border-bottom: 1px dotted #1888B8;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-}
-
-/* sidebar */
-#siderbar .sidebar-module{
-	padding:0 10px 10px;
-	margin-bottom:10px;
-}
-
-#siderbar .t-list {
-	margin: 0 0 0 20px;
-	color: #307437;
-}
-
-#siderbar .t-list a {
-	text-decoration: none;
-	color: #000;
-}
-
-#siderbar .t-list a:hover {
-	background-color: #307437;
-	color: #fff;
-}
-
 /* footer area */
-#ftbg {
-	display: none;
-	clear: both;
-	background:#132f3c url(/assets/img/footer-bg.gif) repeat-x;
-	border-top: 1px solid #7FD4F4;
-	height: 50px;
-}
 #ft {
+    display: none;
 	width: 960px;
 	margin: 0px auto;
 	color: #56bdea;
@@ -212,18 +198,19 @@ body {
 	color: #56bdea;
 }
 	
-#ftbg a:hover {
+#ft a:hover {
 	color: #ffffff !important;
 }
+
 /* credits */
-#credits {
+.credits {
 	margin: 0px auto;
 	width: 950px;
 	color: #56bdea;
 	line-height: 50px;
 	font-size: 100%;
 }
-#credits a, #credit a:visited {
+.credits a,.credit a:visited {
 	color: #56bdea;
 	text-decoration: none;
 }
@@ -282,8 +269,8 @@ img.alignleft, img.alignright, img.aligncenter {
     .post-title{
     	margin:0;
     	padding:5px 0px;
-    	font:normal 24px/1.2 "Microsoft YaHei","微软雅黑","Microsoft JhengHei","华文黑体",STHeiti,Georgia,"Times New Roman",Times,serif;
     	letter-spacing: -0.2px;
+    	font: 400 24px/1.2 "Microsoft YaHei","微软雅黑","Microsoft JhengHei","华文黑体",STHeiti,Georgia,"Times New Roman",Times,serif;
     }
     .post-title .cat{
         margin-right:10px;
@@ -305,7 +292,7 @@ img.alignleft, img.alignright, img.aligncenter {
 	    margin:0 -20px 20px
 	}
 	.post-content{
-	    padding:0 10px 20px;
+	    padding-bottom:20px;
 	    color:#333;
 	}
 	.post-content a{
@@ -369,17 +356,17 @@ img.alignleft, img.alignright, img.aligncenter {
 	    letter-spacing: 1px; 
 	}
 
+
 .post-listing .post-item{
 	padding:10px 0 30px 0px;
 }
 	.post-listing .post-content{
 	    padding-bottom:0px
 	}
+	
 
 #github-badge img { float: left }
 
-
-#disqus_thread{padding:0 20px}
 
 .clos{padding:10px 20px;zoom:1}
     .clos h1{margin-bottom:15px}
@@ -445,9 +432,23 @@ table tr th > *:first-child, table tr td > *:first-child {
 table tr th > *:last-child,table tr td > *:last-child {
     margin-bottom: 0;
 }
-.v-pagination{overflow:hidden;zoom:1}
+.v-pagination{
+    position:relative;
+    overflow:hidden;
+    zoom:1;
+    min-height:30px;
+    padding-bottom:20px;
+}
+.v-pagination .prev{
+    position:absolute;
+    top:0;
+    right:0
+}
 
 .post-listing .tag-list{margin-left:10px}
     .post-listing .date{color:#909090;font-size:11px;margin-left:10px}
     
+.about{
+    padding-top:20px
+}
 

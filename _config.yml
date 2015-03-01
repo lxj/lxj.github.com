@@ -13,7 +13,6 @@ baseurl: ""
 
 # Build settings
 markdown: rdiscount
-# markdown: redcarpet
 excerpt_separator: "<!-- more -->"
     
   
@@ -41,7 +40,21 @@ css:
 
 js:
   - /assets/js/lxj.js
-
+  
+img: /assets/img
+ 
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - Rakefile
+  - node_modules
+  - Gruntfile.js
+  - package.json
+  - CNAME
+  - Website.tmproj
+  - src
+  - _site
     
 # Plugins
 gems:
@@ -70,3 +83,5 @@ compress_html:
   clippings: all
   comments: ["<!-- ", " -->"]
   endings: all    
+  
+  

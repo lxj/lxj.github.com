@@ -6,27 +6,51 @@ keywords: CSS,CSS3,HTML5,HTML,Javascript
 isIndex: true
 id: index
 ---
+
 <ul class="post-listing">
+
 	{% for post in paginator.posts %}
+	
 	<li class="post-item">
+	
 		<article class="post">
-		<div class="entry">
-			<h2 class="post-title">
-				<a href="{{ post.url }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a>
-				{% if post.categories %} • {% include category_links.html %}{% endif %}
-			</h2>
-			<div class="meta"><span class="time">{{ post.date | date_to_utc | date: "%Y-%m-%d" }}</span> • <span class="cat"><a href="/category/{{ post.category | slugize }}">{{ post.category }}</a></span></div>
-		</div>
-        <div class="post-content">
-          {{ post.excerpt }}
-        </div>
-        {% if post.content contains site.excerpt_separator %}
-          <p class="post-continue">
-            <a href="{{ post.url | prepend: site.baseurl }}">Read on &rarr;</a>
-          </p>
-        {% endif %}
+		
+		    <div class="entry">
+		    
+			    <h2 class="post-title">
+				    <a href="{{ post.url }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a>
+			    </h2>
+			    
+			    <div class="meta">
+			    
+					  {% if post.category %} 
+					  post in
+					  • <span class="cat"><a href="/category/{{ post.category | slugize }}">{{ post.category }}</a></span>
+					  {% endif %}
+					  
+			    	<span class="time">at {{ post.date | date: "%Y-%m-%d" }}</span> 
+			    	
+			    </div>
+			    
+		    </div>
+		
+            <div class="post-content">
+              {{ post.excerpt }}
+            </div>
+            
+            {% if post.content contains site.excerpt_separator %}
+              <p class="post-continue">
+                <a href="{{ post.url | prepend: site.baseurl }}">Read on &rarr;</a>
+              </p>
+            {% endif %}
+        
 		</article>
+		
 	</li>
+	
 	{% endfor %}
+	
 </ul>
+
  {% include pagination.html %}
+ 
