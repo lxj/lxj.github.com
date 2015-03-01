@@ -16,7 +16,6 @@ id: index
 				{% if post.categories %} • {% include category_links.html %}{% endif %}
 			</h2>
 			<div class="meta"><span class="time">{{ post.date | date_to_utc | date: "%Y-%m-%d" }}</span> • <span class="cat"><a href="/category/{{ post.category | slugize }}">{{ post.category }}</a></span></div>
-			<i class="icon-tags"></i> {% for tag in page.tags %} <a href="/tags/{{ tag }}" title="View posts tagged with &quot;{{ tag }}&quot;"><u>{{ tag }}</u></a>  {% if forloop.last != true %} {% endif %} {% endfor %}
 		</div>
         <div class="post-content">
           {{ post.excerpt }}
