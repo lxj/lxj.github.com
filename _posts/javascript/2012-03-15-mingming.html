@@ -5,18 +5,21 @@ category: javascript
 ---
 
         http://dayanjia.com/2010/10/9-confusing-naming-conventions-for-beginners-in-web-programming.html
-  		<p>当人们一开始接触各种Web开发语言时，总会发现彻底搞懂不同语言的命名约定是一件很要命的事情。而且当开发者在争论什么才是最佳实践时，事情会变得更加让人困惑。为了让初学者更容易地在不同语言中过渡，这篇文章列出了一些常见的约定。</p>
+<p>当人们一开始接触各种Web开发语言时，总会发现彻底搞懂不同语言的命名约定是一件很要命的事情。而且当开发者在争论什么才是最佳实践时，事情会变得更加让人困惑。为了让初学者更容易地在不同语言中过渡，这篇文章列出了一些常见的约定。</p>
 <p><span id="more-1059"></span></p>
 <h2>1. 类属性名前加下划线</h2>
 <p>如果你看到一个变量或者方法是以_开头的，其实这并不代表其幕后有什么猫腻。这仅仅是为了提醒开发者这个变量/属性/方法是私有的（<code>private</code>）或是受保护的（<code>protected</code>），它们不能从类的外部访问到。</p>
 <h4>PHP方式</h4>
-<pre class="brush: php; title: ; notranslate" title="">class MyClass {
+
+{% highlight php linenos %}
+class MyClass {
    // 这个实例变量在类外部无法访问
    private $_someVariable;
 
    // 这个方法仅在类内部或者其它继承它的类中可用
    protected function __behindTheScenesMethod() {}
-}</pre>
+}
+{% endhighlight %}
 
 {% highlight ruby linenos %}
 def show
@@ -27,6 +30,9 @@ def show
   end
 end
 {% endhighlight %}
+
+<!-- more -->
+<h4>JavaScript方式</h4>
 
 {% highlight javascript linenos %}
 var Female = (function() {
@@ -43,31 +49,26 @@ Female.age; // 35
 Female.weight; // 110
 Female._trueAge; // 未定义（因为它是私有的，嘿嘿）
 {% endhighlight %}
-<!-- more -->
-<h4>JavaScript方式</h4>
-<pre class="brush: jscript; title: ; notranslate" title="">var Female = (function() {
-   var _trueAge = 50,
-        _trueWeight = 140;
 
-   return {
-      age : _trueAge - 15,
-      weight : _trueWeight - 30
-   };
-})();
-
-Female.age; // 35
-Female.weight; // 110
-Female._trueAge; // 未定义（因为它是私有的，嘿嘿）</pre>
 <p>这里的Female并不是一个方法，但它返回一个对象（译注：这个例子很幽默）。这样，下划线前缀就可以提醒我们哪些是私有的。</p>
 <h2>2. 大写常量名</h2>
 <p>常量（<code>Constant</code>）代表了一个不会改变的静态值。例如，假设一个项目中需要一个税率值.0825，它便是一个常量。然而，并非所有语言都支持这种类型。因此，最好的做法是全部使用大写字母来提醒自己这是个常量。在JavaScript中，语言内建的对象都是采用这种约定，例如<code>MATH.PI</code>。</p>
+
 <h4>JavaScript方式</h4>
-<pre class="brush: jscript; title: ; notranslate" title="">var TAXRATE = .0825;</pre>
+
+{% highlight javascript linenos %}
+var TAXRATE = .0825;
+{% endhighlight %}
+
 <h4>PHP方式</h4>
+
 <pre class="brush: php; title: ; notranslate" title="">define('TAXRATE', .0825);</pre>
+
 <h2>3. 单字母前缀</h2>
+
 <p>你一定在某些场合见过变量名是以一个单独字母开头的，例如“s”或者“i”。</p>
 <pre class="brush: php; title: ; notranslate" title="">$sName = 'Captain Jack Sparrow'; //译注：Jack Sparrow《加勒比海盗》中的船长角色</pre>
+
 <p>这被称作“匈牙利命名法”，事实上在近几年并不流行。不过在许多公司内这仍是一条约定。</p>
 <blockquote><p>匈牙利命名法能够提醒开发者它正在使用的变量是什么类型的：<code>string</code>，<code>integer</code>等。</p></blockquote>
 <p>尤其在JavaScript中，这种方法是不可取的，因为JavaScript是弱类型的语言。弱类型语言不需要在使用变量前声明它的类型。如果我们给一个字符串以“s”开头命名，但是后来我们把一个整数赋值给它，这种命名法还有什么意义呢？事实上，这种形式的命名法会妨碍我们的工作，而不是对工作有益。</p>
