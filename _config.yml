@@ -26,15 +26,23 @@ title: Sean Lou
 url: http://www.lxj.name
 repo: http://github.com/lxj.github.com
 feed: /atom.xml
-
+  
 # color scheme
 highlight: light
 
 # author
-author_name: Sean Lou
-author_email: louxiaojian@gmail.com
-author_info: <a href="http://www.lxj.name">SeanLou</a>
+author:
+  name: Sean Lou
+  email: louxiaojian@gmail.com
+  info: <a href="http://www.lxj.name">SeanLou</a>
 
+css:
+  - /assets/css/lxj.css
+
+js:
+  - /assets/js/lxj.js
+
+    
 # Plugins
 gems:
   - jekyll-archives
