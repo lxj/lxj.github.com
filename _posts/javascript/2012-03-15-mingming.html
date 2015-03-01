@@ -17,6 +17,7 @@ category: javascript
    // 这个方法仅在类内部或者其它继承它的类中可用
    protected function __behindTheScenesMethod() {}
 }</pre>
+
 {% highlight ruby linenos %}
 def show
   @widget = Widget(params[:id])
@@ -25,6 +26,22 @@ def show
     format.json { render json: @widget }
   end
 end
+{% endhighlight %}
+
+{% highlight javascript linenos %}
+var Female = (function() {
+   var _trueAge = 50,
+        _trueWeight = 140;
+
+   return {
+      age : _trueAge - 15,
+      weight : _trueWeight - 30
+   };
+})();
+
+Female.age; // 35
+Female.weight; // 110
+Female._trueAge; // 未定义（因为它是私有的，嘿嘿）
 {% endhighlight %}
 <!-- more -->
 <h4>JavaScript方式</h4>

@@ -23,6 +23,7 @@ module.exports = function(grunt) {
         css: {
           src: [
             'src/css/lxj.css', 
+            'src/css/highlight.css',
             'assets/app/_syntaxhighlighter/styles/shCore.css',
             'assets/app/_syntaxhighlighter/styles/shThemeDefault2.css'
            ],
