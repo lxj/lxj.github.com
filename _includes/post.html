@@ -4,24 +4,29 @@
 
       <div class="entry">
       
-          <h1 class="post-title"><a href='{{page.url}}'>{{page.title}}</a></h1>
+          <h1 class="post-title">
+            <a href='{{page.url}}'>{{page.title}}</a>
+          </h1>
           
           <div class="meta">
           
-              <span class="cat">post in • <a href="/category/{{ page.category | slugize }}">{{ page.category }}</a></span>
+              <span class="cat">Posted in • <a href="/category/{{ page.category | slugize }}">{{ page.category }}</a></span>
               
               <span class="time">at {{ page.date | date: "%Y-%m-%d" }}</span>
-              
-              {% if page.tags %}
-		            <span class="tag-list">
-		            Tags:{% for tag in page.tags %}
-		            <a href="/tag/{{ tag| slugize }}" class="tag-item">{{ tag }}</a>
-		            {% endfor %}
-		            </span>
-              {% endif %}
-              
+              by lxj
+
           </div>
-          
+
+          {% if page.tags %}
+          <div class="tags">
+            <span class="tag-list">
+            Tags:{% for tag in page.tags %}
+            <a href="/tag/{{ tag| slugize }}" class="tag-item">{{ tag }}</a>,
+            {% endfor %}
+            </span>
+          </div>
+          {% endif %}
+
       </div>
       
       <div class="post-content">
