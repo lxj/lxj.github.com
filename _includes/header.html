@@ -7,9 +7,9 @@
     <meta name="keywords" content="{{ page.keywords | join: ',' }}" />
     
     {% if page.title != null %}
-    <title>{{page.title}} | {{ page.author }} - {{ page.desc }}</title>
+    <title> {{ page.title | site.title }} - {{site.author.name}}</title>
     {% else %}
-    <title>{{ page.author }} - {{ page.desc }}</title>
+    <title>{{ site.title }} - {{site.author.name}} </title>
     {% endif %}
     
     <link rel="author" href="https://plus.google.com/112825052932953734087" />
@@ -38,11 +38,11 @@
 			<div class="masthead">
 			    
                 <div class="author-card">
-                    <h1 class="t"><a href="/">{{ page.author }}</a></h1>
+                    <h1 class="t"><a href="/">{{ site.author.name }}</a></h1>
                     <p class="avatar-wrap">
                         <a href="/"><img src="{{site.img}}/412359.jpg" class="avatar" alt="" /></a>
                     </p>
-                    <p id="site-des" class="description">{{ page.desc }}</p>
+                    <p id="site-des" class="description">{{ site.title }}</p>
                 </div>
 			  
 			    <div id="search">{% include searchform.html %}</div>

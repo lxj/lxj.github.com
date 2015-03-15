@@ -21,7 +21,7 @@ disqus_short_name: barretlee
 disqus_show_comment_count: true
 
 # site
-title: Sean Lou
+title: 专注前端开发
 url: http://www.lxj.name
 repo: http://github.com/lxj.github.com
 feed: /atom.xml
@@ -54,12 +54,10 @@ exclude:
   - CNAME
   - Website.tmproj
   - src
-  - _site
     
 # Plugins
 gems:
   - jekyll-archives
-  - jekyll-redirect-from
 
   
 # jekyll-archives

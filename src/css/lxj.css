@@ -251,7 +251,6 @@ img.alignleft, img.alignright, img.aligncenter {
 }
 .page-title{zoom:1}
 
-.tag-item{margin-right:10px}
 
 .post{zoom:1}
     .entry{
@@ -264,7 +263,16 @@ img.alignleft, img.alignright, img.aligncenter {
 		font-size:11px;
 	}
 	.entry .meta{
-	    padding-left:10px;
+	    padding-left:0;
+	    font-size:12px;
+	    line-height:16px
+	}
+	.entry .tags{
+			font-size:12px;
+			line-height:16px;
+	}
+	.entry .tags a{
+			text-decoration: underline;
 	}
     .post-title{
     	margin:0;
@@ -365,6 +373,60 @@ img.alignleft, img.alignright, img.aligncenter {
 	}
 	
 
+.social {
+    text-align: left;
+}
+
+.social a {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    text-indent: -9999px;
+    font: 0/0 a;
+    margin: 0 8px;
+    opacity: 0.5;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    -webkit-transition: all 0.28s ease;
+    transition: all 0.28s ease;
+}
+
+.social a:hover {
+    opacity: 1;
+}
+
+.social a.github {
+    background: url(http://www.w3cplus.com/sites/all/themes/w3cplusV2/images/github.png) center no-repeat #afb6ca;
+    border: 1px solid #afb6ca;
+}
+
+.social a.weibo {
+    background: url(http://www.w3cplus.com/sites/all/themes/w3cplusV2/images/weibo.png) center no-repeat #aaf;
+    border: 1px solid #aaf;
+}
+
+.social a.facebook {
+    background: url(http://www.w3cplus.com/sites/all/themes/w3cplusV2/images/facebook.png) center no-repeat #3b5998;
+    border: 1px solid #3b5998;
+}
+
+.social a.google {
+    background: url(http://www.w3cplus.com/sites/all/themes/w3cplusV2/images/google.png) center no-repeat #c83d20;
+    border: 1px solid #c83d20;
+}
+
+.social a.twitter {
+    background: url(http://www.w3cplus.com/sites/all/themes/w3cplusV2/images/twitter.png) center no-repeat #55cff8;
+    border: 1px solid #55cff8;
+}
+
+.social a.linkedin {
+    background: url(http://www.w3cplus.com/sites/all/themes/w3cplusV2/images/linkedin.png) center no-repeat #005a87;
+    border: 1px solid #005a87;
+}
+
 #github-badge img { float: left }
 
 
@@ -445,10 +507,13 @@ table tr th > *:last-child,table tr td > *:last-child {
     right:0
 }
 
-.post-listing .tag-list{margin-left:10px}
-    .post-listing .date{color:#909090;font-size:11px;margin-left:10px}
+.post-listing .date{
+	color:#909090;
+	font-size:11px;
+	margin-left:10px
+}
     
 .about{
-    padding-top:20px
+    padding-top:15px
 }
 
