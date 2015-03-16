@@ -2,5 +2,6 @@ _site/**
 test.html
 node_modules/
 **.sw?
+npm-debug.log
 
 o-rdoc/**
